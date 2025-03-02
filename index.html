@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hotstar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scrollbar-width: none;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .skeleton-section {
+            width: 100vw;
+            height: 100vh;
+            background-color: lightblue;
+        }
+
+        nav {
+            width: 5vw;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: black;
+            border-right: 1px solid white;
+        }
+
+        .right-main {
+            width: 95vw;
+            min-height: 100vh;
+            background-color: black;
+            float: right;
+        }
+
+        .section-1 {
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.503);
+            margin: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+
+
+        }
+
+        .section-2 {
+            min-height: 100vh;
+            width: 90%;
+            background-color: rgb(1, 1, 1);
+            margin: 20px auto;
+            border-radius: 10px;
+
+
+        }
+
+        .trailer {
+            width: 100%;
+            position: sticky;
+            top: 10px;
+            border-radius: 10px;
+
+
+        }
+
+        .vid-down {
+            width: 100%;
+            min-height: 400px;
+            padding: 20px;
+            position: relative;
+            bottom: 500px;
+            background: linear-gradient(to bottom, transparent, black, black, black, black, black);
+        }
+
+        .button-1 {
+            font-size: 20px;
+            padding: 10px 150px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            background: #009FFF;
+            background: -webkit-linear-gradient(to right, #009FFF, #ec2F4B);
+            background: linear-gradient(to right, #009FFF, #ec2F4B);
+
+        }
+
+        .section2-2 {
+            width: 100%;
+            /* height: 200px; */
+            /* background-color: yellow; */
+            overflow: scroll;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+
+        .sports:hover {
+            scale: 1.10;
+        }
+
+        .images {
+            width: 25px;
+        }
+
+        .top {
+            margin-bottom: 120px
+        }
+
+        .fontt {
+            font-size: 15px;
+        }
+
+        .dd {
+            width: 600px;
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        .des {
+            margin-top: 80px;
+        }
+
+        .button-2 {
+            padding: 10px 80px;
+            background-color: rgba(128, 128, 128, 0.618);
+            font-size: 20px;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .movies {
+            min-width: 150px;
+            /* height: 90%; */
+        }
+
+        .section2-3 {
+            min-width: 150px;
+            overflow: scroll;
+            cursor: pointer;
+            transition: all 0.5s ease;
+        }
+        .section2-4 {
+            min-width: 150px;
+            overflow: scroll;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+        .m1::after{
+            content: '1';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+            left: -10px;
+           
+        }
+        .m2::after{
+            content: '2';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m3::after{
+            content: '3';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m4::after{
+            content: '4';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m5::after{
+            content: '5';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m6::after{
+            content: '6';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m7::after{
+            content: '7';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m8::after{
+            content: '8';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m9::after{
+            content: '9';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .m10::after{
+            content: '10';
+            font-size: 90px;
+            font-weight: 600;
+            color: white;
+            -webkit-text-stroke: 2px white;
+            transition: all 0.5s ease;
+            position: absolute;
+            top: 165px;
+           
+        }
+        .movies:hover {
+            cursor: pointer;
+            scale: 1.10;
+        }
+        .home:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .search:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .tv:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .pop:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .run:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .down{
+            transition: all 0.5s ease;
+        }
+        .video:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .dot:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .pf:hover{
+            scale: 1.50;
+            cursor: pointer;
+        }
+        .ht{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="skeleton-section">
+        <nav>
+            <div class="top d-flex">
+                <img src="logo.png" width="80px" class="ht p-2" alt="">
+            </div>
+            <div class="down d-flex flex-column align-items-center justify-content-center">
+                <img class="images my-4 home" src="home.png" alt="">
+                <img class="images my-4 search" src="search.png" alt="">
+                <img class="images my-4 tv" src="tv.png" alt="">
+                <img class="images my-4 pop" src="popcorn.png" alt="">
+                <img class="images my-4 run" src="run.png" alt="">
+                <img class="images my-4 video" src="video.png" alt="">
+                <img class="images my-4 dot" src="dotts.png" alt="">
+                <img class="images my-4 pf" src="proile.png" alt="">
+            </div>
+        </nav>
+
+        <div class="right-main">
+            <div class="section-1 d-flex">
+                <img src="daredevil.png" class="dd" alt="">
+                <div class="des">
+                    <div class="d-flex"><img src="jio.png" height="50px" style="border-radius: 5px;" alt="">
+                        <p class="fontt px-2 text-light"><strong>Daredevil</strong><br>Streaming From March 5</p>
+                    </div>
+                    <p class="text-light">Daredevil's secret life is on the line in this gripping <br>superhero drama !
+                    </p>
+                    <button class="button-2"><strong>Trailer</strong></button>
+                </div>
+            </div>
+            <div class="section-2">
+                <video src="trailer.mp4" autoplay muted class="trailer"></video>
+                <div class="vid-down">
+                    <div class="section2-1 d-f align-iems-start justify-content-center flex-column">
+                        <img src="love.avif" width="150px" alt="">
+                        <h4 class="text-primary fs-6 mt-2">New Release</h4>
+                        <p class="text-light mt-2">2025 <img src="dot.png" width="10px" alt=""> U/A 13+ <img
+                                src="dot.png" width="10px" alt=""> 1 Season <img src="dot.png" width="10px" alt=""> 7
+                            languages</p>
+                        <p class="text-light mt-2"><strong>Romance | Comedy</strong></p>
+                        <p class="text-light mt-2">Vinod is ready to build his dream house. But is he <br>ready to face
+                            the hurdles in his path ?</p>
+                        <button class="button-1 mt-2"><i class="fa-solid fa-play mx-3"></i>Watch</button>
+                    </div>
+                    <h1 class="text-light mx-2 fs-2 mt-3">Latest Releases</h1>
+                    <div class="section2-2 d-flex gap-5 mt-2">
+                        <div class="movies mx-2">
+                            <img src="avesham.webp" style="min-width: 100%;height: 300px;border-radius: 15px;">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="engaged.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="hmoons.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="hunting party.avif" style="min-width: 100%;height: 300px;border-radius: 15px;"
+                                alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="jaadu.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="sprider.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="suitsla.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="touch.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="faisu.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="iga.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="kobali.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="lll.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="wbr.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="zara.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                    </div>
+                    <h1 class="text-light mx-2 fs-2 mt-3">Non-Stop Sports</h1>
+                    <div class="section2-3 d-flex gap-5 mt-4">
+                        <div class="sports mx-2">
+                            <img src="sp1.avif" style="min-width: 100%;height: 200px;border-radius: 15px;">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp2.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp3.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp4.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp5.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp6.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="sports mx-2">
+                            <img src="sp7.avif" style="min-width: 100%;height: 200px;border-radius: 15px;" alt="">
+                        </div>
+
+                    </div>
+                    <h1 class="text-light mx-2 fs-2 mt-3">Top 10 in India Today - Telugu</h1>
+                    <div class="section2-4 d-flex gap-5 mt-4">
+                        <div class="movies m1 mx-2">
+                            <img src="tmp.webp" style="min-width: 100%;height: 300px;border-radius: 15px;">
+                        </div>
+                        <div class="movies m2 mx-2">
+                            <img src="lubber pandhu.webp" style="min-width: 100%;height: 300px;border-radius: 15px;"
+                                alt="">
+                        </div>
+                        <div class="movies m3 mx-2">
+                            <img src="zara.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m4 mx-2">
+                            <img src="kobali.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m5 mx-2">
+                            <img src="oops.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m6 mx-2">
+                            <img src="gvk.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m7 mx-2">
+                            <img src="wbr.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m8 mx-2">
+                            <img src="arm.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m9 mx-2">
+                            <img src="manj.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies m10 mx-2">
+                            <img src="aqua.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                    </div>
+                    <h1 class="text-light mx-2 fs-2 mt-3">Marvel Action Movies</h1>
+                    <div class="section2-2 d-flex gap-5 mt-4">
+                        <div class="movies mx-2">
+                            <img src="av1.webp" style="min-width: 100%;height: 300px;border-radius: 15px;">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av2.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av3.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av4.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av5.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av6.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av7.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av8.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av9.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av10.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="av11.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                    </div>
+                    <h1 class="text-light mx-2 fs-2 mt-5">Disney Musical Movies</h1>
+                    <div class="section2-2 d-flex gap-5 mt-4">
+                        <div class="movies mx-2">
+                            <img src="d1.webp" style="min-width: 100%;height: 300px;border-radius: 15px;">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d2.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d3.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d4.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d5.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d6.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d7.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d9.webp" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                        <div class="movies mx-2">
+                            <img src="d10.avif" style="min-width: 100%;height: 300px;border-radius: 15px;" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
